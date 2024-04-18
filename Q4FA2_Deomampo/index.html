@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FA 2 Multiplication Table</title>
+</head>
+<body>
+    <h1>Multiplication Table Generator</h1>
+    <label for="input1">[enter a number between 2 and 10]</label><br>
+    <input type="text" name="num1" id="num1"> 
+    by    
+    <input type="text" name="num2" id="num2"><br>
+    <button onclick="confirmA()">Click here when ready!</button><br>
+
+
+    <div id="table1"></div>
+
+    <script>
+    function confirmA(){
+        var x = document.getElementById("num1").value;
+        var y = document.getElementById("num2").value;
+
+        if (x<2 || y<2 || x>10 || y>10){
+            alert("Please Enter Numbers between 2 and 10");
+            return;
+        }
+        var tablee = "<table>"; 
+            for (c1 = 1; c1 <= x; c1++) {
+                tablee = tablee + "<tr>";
+                    for (c2 = 1; c2 <= y; c2++) {
+                        tablee = tablee + "<td>" + (c1*c2) + "</td>";
+                    }
+                    tablee = tablee + "</tr>";
+                }
+                tablee = tablee + "</table>";
+                document.getElementById("table1").innerHTML = tablee;
+            }
+    </script>
+
+    <style>
+        table, tr, td {
+            border:1px solid black;
+        }
+    </style>
+</body>
+</html>
